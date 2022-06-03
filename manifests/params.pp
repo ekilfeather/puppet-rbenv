@@ -11,7 +11,7 @@
 # Copyright 2013 Justin Downing
 #
 class rbenv::params {
-  case $osfamily {
+  case $::['os']['family'] {
     'Debian': {
       $group = 'adm'
     }
@@ -22,7 +22,7 @@ class rbenv::params {
       $group = 'users'
     }
     default: {
-      fail("The rbenv module currently only suports Debian, RedHat, and Suse. Not #{$osfamily}")
+      fail("The rbenv module currently only suports Debian, RedHat, and Suse. Not #{$::['os']['family']}")
     }
   }
 }
