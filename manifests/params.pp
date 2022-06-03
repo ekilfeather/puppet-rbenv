@@ -22,7 +22,7 @@ class rbenv::params {
       $group = 'users'
     }
     default: {
-      fail('The rbenv module currently only suports Debian, RedHat, and Suse.')
+      fail("The rbenv module currently only suports Debian, RedHat, and Suse. Not #{$::osfamily}")
     }
   }
 }
